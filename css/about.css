@@ -1,0 +1,245 @@
+/* About Story Section */
+.about-story {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #111111 0%, #0a0a0a 100%);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-content {
+    margin-top: 2rem;
+}
+
+.story-content p {
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image .image-placeholder {
+    aspect-ratio: 1;
+    padding: 3rem 2rem;
+}
+
+/* Owner Section */
+.owner-section {
+    padding: 100px 0;
+    background: #0a0a0a;
+}
+
+.owner-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.owner-image .image-placeholder {
+    aspect-ratio: 1;
+    padding: 3rem 2rem;
+}
+
+.owner-name {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.owner-title {
+    color: #4caf50;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.owner-description p {
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.owner-awards {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.owner-awards h4 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.owner-awards ul {
+    list-style: none;
+}
+
+.owner-awards li {
+    color: #cccccc;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.owner-awards li::before {
+    content: '▪';
+    color: #4caf50;
+    position: absolute;
+    left: 0;
+}
+
+/* Staff Section */
+.staff-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #111111 0%, #0a0a0a 100%);
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.staff-card {
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.staff-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(76, 175, 80, 0.5);
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.1);
+}
+
+.staff-image {
+    margin-bottom: 1.5rem;
+}
+
+.staff-image .image-placeholder {
+    aspect-ratio: 1;
+    max-width: 150px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.staff-name {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.staff-position {
+    color: #4caf50;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.staff-description {
+    color: #cccccc;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    padding: 100px 0;
+    background: #0a0a0a;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.philosophy-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 15px;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.philosophy-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(76, 175, 80, 0.5);
+    box-shadow: 0 15px 30px rgba(76, 175, 80, 0.1);
+}
+
+.philosophy-icon {
+    font-size: 2.5rem;
+    color: #4caf50;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+.philosophy-item h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.philosophy-item p {
+    color: #cccccc;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* About Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .owner-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .owner-image .image-placeholder {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-content p,
+    .owner-description p {
+        font-size: 1rem;
+    }
+
+    .staff-card,
+    .philosophy-item {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu - Shot Bar Acorn</title>
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/menu.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    </head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Acorn Logo" class="logo-img">
+                <span class="logo-text">Acorn</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="menu.html" class="nav-link active">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="access.html" class="nav-link">Access</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-title">Menu</h1>
+            <p class="page-subtitle">お飲み物メニュー</p>
+            <div class="charge-info">
+                <p>Charge ¥1,000 TAX 10%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- メニューカテゴリー -->
+    <section class="menu-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="beer">
+                    <i class="fas fa-beer"></i>
+                    <span>Beer</span>
+                </button>
+                <button class="tab-btn" data-category="cocktail">
+                    <i class="fas fa-cocktail"></i>
+                    <span>Cocktail</span>
+                </button>
+                <button class="tab-btn" data-category="whisky">
+                    <i class="fas fa-glass-whiskey"></i>
+                    <span>Whisky</span>
+                </button>
+                <button class="tab-btn" data-category="wine">
+                    <i class="fas fa-wine-bottle"></i>
+                    <span>Wine</span>
+                </button>
+                <button class="tab-btn" data-category="others">
+                    <i class="fas fa-bottle-water"></i>
+                    <span>Others</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ビールメニュー -->
+    <section class="menu-section active" id="beer">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Beer & Sour</h2>
+                <p class="section-subtitle">ビール・サワー・ソフトドリンク</p>
+            </div>
+            
+            <div class="spirits-grid">
+                <div class="spirits-category">
+                    <h3 class="category-title">Beer</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">生ビール（小）</span>
+                            <span class="spirit-price">¥1,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">生ビール（大）</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">シャンディーガフ</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="spirits-category">
+                    <h3 class="category-title">Sour ALL ¥700</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">レモン</span>
+                            <span class="spirit-price">¥700</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ライム</span>
+                            <span class="spirit-price">¥700</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">カルピス</span>
+                            <span class="spirit-price">¥700</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">トマト</span>
+                            <span class="spirit-price">¥700</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spirits-category">
+                    <h3 class="category-title">缶物</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">スラット</span>
+                            <span class="spirit-price">¥1,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">お茶割り</span>
+                            <span class="spirit-price">¥1,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">水割</span>
+                            <span class="spirit-price">¥1,200</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spirits-category">
+                    <h3 class="category-title">Soft drink ALL ¥500</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">お茶</span>
+                            <span class="spirit-price">¥500</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">トマトジュース</span>
+                            <span class="spirit-price">¥500</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">カルピス</span>
+                            <span class="spirit-price">¥500</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">コーラ</span>
+                            <span class="spirit-price">¥500</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ジンジャーエール</span>
+                            <span class="spirit-price">¥500</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">オレンジジュース</span>
+                            <span class="spirit-price">¥500</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">パイナップルジュース</span>
+                            <span class="spirit-price">¥500</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">マンゴージュース</span>
+                            <span class="spirit-price">¥500</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">グレープフルーツジュース</span>
+                            <span class="spirit-price">¥500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- カクテル・ショットメニュー -->
+    <section class="menu-section" id="cocktail">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cocktail & Shot</h2>
+                <p class="section-subtitle">カクテル・ショット</p>
+            </div>
+            
+            <div class="spirits-grid">
+                <div class="spirits-category">
+                    <h3 class="category-title">Cocktail ALL ¥800</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">※要相談まで</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spirits-category">
+                    <h3 class="category-title">Shot</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">テキーラ</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">イエガー</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ウォッカ</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ウクリュウ</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">テキーラローズ</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">アボカ</span>
+                            <span class="spirit-price">¥1,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">コカボム</span>
+                            <span class="spirit-price">¥1,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">クライナー</span>
+                            <span class="spirit-price">¥1,200</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ウイスキーメニュー -->
+    <section class="menu-section" id="whisky">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Whisky</h2>
+                <p class="section-subtitle">ウイスキー</p>
+            </div>
+            
+            <div class="spirits-grid">
+                <div class="spirits-category">
+                    <h3 class="category-title">Whisky</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">角</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">知多</span>
+                            <span class="spirit-price">¥1,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ワイン・その他メニュー -->
+    <section class="menu-section" id="wine">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Wine & Plum Wine</h2>
+                <p class="section-subtitle">ワイン・梅酒・シャンパン</p>
+            </div>
+            
+            <div class="spirits-grid">
+                <div class="spirits-category">
+                    <h3 class="category-title">Plum wine</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">梅酒</span>
+                            <span class="spirit-price">¥700</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spirits-category">
+                    <h3 class="category-title">Wine ALL ¥800</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">グラス（赤・白）</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">キティ</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">オペレーター</span>
+                            <span class="spirit-price">¥800</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spirits-category">
+                    <h3 class="category-title">Champagne</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">カフェバリ</span>
+                            <span class="spirit-price">¥10,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">リステル</span>
+                            <span class="spirit-price">¥20,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ヴーヴイエロー</span>
+                            <span class="spirit-price">¥35,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ヴーヴホワイト</span>
+                            <span class="spirit-price">¥45,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">オリシャン</span>
+                            <span class="spirit-price">¥30,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">オリシャンロゼ</span>
+                            <span class="spirit-price">¥50,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ドンペリニヨン</span>
+                            <span class="spirit-price">¥70,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ベルエポック</span>
+                            <span class="spirit-price">¥80,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ソウメイ</span>
+                            <span class="spirit-price">¥80,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">アルマンド</span>
+                            <span class="spirit-price">¥150,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- その他メニュー -->
+    <section class="menu-section" id="others">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bottle & Pitcher</h2>
+                <p class="section-subtitle">ボトル・ピッチャー・焼酎</p>
+            </div>
+            
+            <div class="spirits-grid">
+                <div class="spirits-category">
+                    <h3 class="category-title">Bottle</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">吉四六</span>
+                            <span class="spirit-price">¥10,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">茉莉花</span>
+                            <span class="spirit-price">¥8,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">麦1本</span>
+                            <span class="spirit-price">¥2,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spirits-category">
+                    <h3 class="category-title">ピッチャー</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">ピッチャー（小）</span>
+                            <span class="spirit-price">¥5,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">ピッチャー（大）</span>
+                            <span class="spirit-price">¥3,000</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">激ヤバピッチャー</span>
+                            <span class="spirit-price">+¥2,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spirits-category">
+                    <h3 class="category-title">焼酎 ALL ¥780</h3>
+                    <div class="spirits-list">
+                        <div class="spirit-item">
+                            <span class="spirit-name">二階堂（麦）</span>
+                            <span class="spirit-price">¥780</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">黒霧島（芋）</span>
+                            <span class="spirit-price">¥780</span>
+                        </div>
+                        <div class="spirit-item">
+                            <span class="spirit-name">鳥飼（米）しそ・梅</span>
+                            <span class="spirit-price">¥780</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- フッター -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-container">
+                        <span class="logo-text">Acorn</span>
+                    </div>
+                    <p>shot bar</p>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4>営業時間</h4>
+                        <p>24:00 - 無限</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>お問い合わせ</h4>
+                        <p>Instagram: </p>
+                        <p>LINE:</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>住所</h4>
+                        <p>〒542-0083</p>
+                        <p>大阪府大阪市中央区東心斎橋2-3-13</p>
+                        <p>日報スターライトビル 2F</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shot Bar Acorn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // メニュータブ切り替え
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const menuSections = document.querySelectorAll('.menu-section');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const category = btn.getAttribute('data-category');
+                    
+                    // タブボタンのアクティブ状態切り替え
+                    tabBtns.forEach(tab => tab.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // メニューセクションの表示切り替え
+                    menuSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === category) {
+                            section.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

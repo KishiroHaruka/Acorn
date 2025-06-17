@@ -1,0 +1,267 @@
+/* Charge Info */
+.charge-info {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.charge-info p {
+    color: #4caf50;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Menu Categories */
+.menu-categories {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #111111 0%, #0a0a0a 100%);
+    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 24px;
+    background: rgba(26, 26, 26, 0.5);
+    border: 2px solid rgba(76, 175, 80, 0.2);
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: linear-gradient(45deg, #4caf50, #81c784);
+    border-color: #4caf50;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.tab-btn i {
+    font-size: 1.2rem;
+}
+
+/* Menu Sections */
+.menu-section {
+    display: none;
+    padding: 80px 0;
+    background: #0a0a0a;
+}
+
+.menu-section.active {
+    display: block;
+}
+
+.menu-category {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    color: #4caf50;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+}
+
+/* Spirits Grid */
+.spirits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.spirits-category {
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.spirits-category:hover {
+    transform: translateY(-5px);
+    border-color: rgba(76, 175, 80, 0.4);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.1);
+}
+
+.spirits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.spirit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(76, 175, 80, 0.1);
+    transition: all 0.3s ease;
+}
+
+.spirit-item:last-child {
+    border-bottom: none;
+}
+
+.spirit-item:hover {
+    background: rgba(76, 175, 80, 0.05);
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.spirit-name {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.spirit-price {
+    color: #4caf50;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Special Styles for Different Categories */
+.spirits-category h3 {
+    font-size: 1.3rem;
+    color: #4caf50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(76, 175, 80, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+/* Champagne Special Styling */
+.spirits-category:has(.spirit-item .spirit-name:contains("カフェバリ")) {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(26, 26, 26, 0.8));
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+/* High-end items styling */
+.spirit-item:has(.spirit-price:contains("¥10,000")),
+.spirit-item:has(.spirit-price:contains("¥20,000")),
+.spirit-item:has(.spirit-price:contains("¥30,000")),
+.spirit-item:has(.spirit-price:contains("¥45,000")),
+.spirit-item:has(.spirit-price:contains("¥50,000")),
+.spirit-item:has(.spirit-price:contains("¥70,000")),
+.spirit-item:has(.spirit-price:contains("¥80,000")),
+.spirit-item:has(.spirit-price:contains("¥150,000")) {
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.05), transparent);
+    border-color: rgba(255, 215, 0, 0.2);
+}
+
+.spirit-item:has(.spirit-price:contains("¥150,000")) .spirit-name {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.spirit-item:has(.spirit-price:contains("¥150,000")) .spirit-price {
+    color: #ffd700;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ALL Price Categories */
+.spirits-category h3:contains("ALL") {
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Special Pitcher Styling */
+.spirit-item:has(.spirit-name:contains("激ヤバ")) {
+    background: linear-gradient(90deg, rgba(255, 69, 0, 0.1), transparent);
+    border-color: rgba(255, 69, 0, 0.3);
+}
+
+.spirit-item:has(.spirit-name:contains("激ヤバ")) .spirit-name {
+    color: #ff4500;
+    font-weight: bold;
+}
+
+.spirit-item:has(.spirit-name:contains("激ヤバ")) .spirit-price {
+    color: #ff4500;
+    font-weight: bold;
+}
+
+/* Menu Responsive */
+@media (max-width: 768px) {
+    .category-tabs {
+        gap: 1rem;
+    }
+
+    .tab-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .spirits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .spirits-category {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-tabs {
+        justify-content: center;
+    }
+
+    .tab-btn span {
+        display: none;
+    }
+
+    .tab-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .spirits-category {
+        padding: 1rem;
+    }
+
+    .spirit-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .spirit-price {
+        align-self: flex-end;
+    }
+}
