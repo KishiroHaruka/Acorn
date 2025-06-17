@@ -254,6 +254,87 @@ body {
     font-size: 0.9rem;
 }
 
+/* Social Links Styling */
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem !important;
+}
+
+.social-link i {
+    font-size: 1.1rem;
+    color: #4caf50;
+    width: 20px;
+}
+
+.social-link a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-link a:hover {
+    color: #4caf50;
+    transform: translateX(5px);
+}
+
+.social-link a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: #4caf50;
+    transition: width 0.3s ease;
+}
+
+.social-link a:hover::after {
+    width: 100%;
+}
+
+/* Instagram特別スタイル */
+.social-link:has(.fa-instagram) a:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.social-link:has(.fa-instagram) i {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* マップリンクスタイル */
+.map-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.map-link i {
+    color: #4caf50;
+    font-size: 1rem;
+}
+
+.map-link a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.map-link a:hover {
+    color: #4caf50;
+    transform: translateX(3px);
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
