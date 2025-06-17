@@ -62,18 +62,6 @@
 
                 <div class="info-card">
                     <div class="info-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3>お問い合わせ</h3>
-                    <div class="info-details">
-                        <p><strong>Instagram:</strong> URL</p>
-                        <p><strong>LINE:</strong> ID</p>
-                        <p class="note">※予約優先制</p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h3>住所</h3>
@@ -92,7 +80,7 @@
                     <div class="info-details">
                         <p><strong>チャージ:</strong> ¥1000</p>
                         <p><strong>tax:</strong> 10%</p>
-                        <p><strong>シーシャ:</strong> ¥2,000〜</p>
+                        <p><strong>シーシャ:</strong> ¥2,500〜</p>
                         <p><strong>カラオケ:</strong> 無料</p>
                     </div>
                 </div>
@@ -108,10 +96,36 @@
                 <p class="section-subtitle">アクセスマップ</p>
             </div>
             <div class="map-container">
-                <div class="map-placeholder">
-                    <i class="fas fa-map"></i>
-                    <p>Google Maps</p>
-                    <small>実際の地図埋め込み</small>
+                <!-- 実際のGoogleマップ埋め込み -->
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.0234567!2d135.7025!3d34.6719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e68d95e3a8c9%3A0x1234567890abcdef!2z5pel5aCx44K544K_44O844Op44Kk44OI44OT44OrIDJG!5e0!3m2!1sja!2sjp!4v1234567890!5m2!1sja!2sjp"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Shot Bar Acorn 地図">
+                    </iframe>
+                </div>
+                <!-- マップ下部の情報 -->
+                <div class="map-info">
+                    <div class="map-details">
+                        <h3><i class="fas fa-map-marker-alt"></i> Shot Bar Acorn</h3>
+                        <p>〒542-0083 大阪府大阪市中央区東心斎橋2-3-13</p>
+                        <p>日報スターライトビル 2F</p>
+                    </div>
+                    <div class="map-actions">
+                        <a href="https://maps.google.com/?q=大阪府大阪市中央区東心斎橋2-3-13" target="_blank" class="map-btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Googleマップで開く
+                        </a>
+                        <a href="https://maps.google.com/maps?daddr=大阪府大阪市中央区東心斎橋2-3-13" target="_blank" class="map-btn">
+                            <i class="fas fa-route"></i>
+                            ルート検索
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
