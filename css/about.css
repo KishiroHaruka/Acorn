@@ -31,129 +31,121 @@
     padding: 3rem 2rem;
 }
 
-/* Owner Section Updates */
+/* Owner Section Updates - 特別感を演出 */
 .owner-section {
     padding: 100px 0;
-    background: #0a0a0a;
+    background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 50%, #0f0f0f 100%);
+    position: relative;
+}
+
+.owner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(76, 175, 80, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(76, 175, 80, 0.05) 0%, transparent 50%);
 }
 
 .owners-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 4rem;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .owner-card {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
-    background: rgba(26, 26, 26, 0.5);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 1px solid rgba(76, 175, 80, 0.2);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.08), rgba(26, 26, 26, 0.6));
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 2px solid rgba(76, 175, 80, 0.3);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.owner-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #4caf50, #81c784, #4caf50);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.owner-card:hover::before {
+    opacity: 1;
 }
 
 .owner-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(76, 175, 80, 0.5);
-    box-shadow: 0 15px 30px rgba(76, 175, 80, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(76, 175, 80, 0.2);
 }
 
-/* Staff Photo Styles */
-.staff-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid rgba(76, 175, 80, 0.3);
-    transition: all 0.3s ease;
+/* オーナー専用の王冠アイコン */
+.owner-card .owner-title::before {
+    content: '👑';
+    margin-right: 0.5rem;
+    font-size: 1rem;
 }
 
-.staff-photo:hover {
-    border-color: #4caf50;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
-    transform: scale(1.05);
-}
-
-/* Owner Image Container */
-.owner-image {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    flex-shrink: 0;
-}
-
-.owner-image .image-placeholder {
-    width: 120px;
-    height: 120px;
-    padding: 1rem;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Staff Image Container */
-.staff-image {
-    margin-bottom: 1.5rem;
-    width: 150px;
-    height: 150px;
-    margin-left: auto;
-    margin-right: auto;
+/* Staff Section - 親しみやすい雰囲気 */
+.staff-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #111111 0%, #0a0a0a 100%);
     position: relative;
 }
 
-.staff-image .image-placeholder {
-    width: 150px;
-    height: 150px;
-    padding: 2rem 1rem;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
 }
 
-/* Image Loading Effects */
-.staff-photo,
-.owner-photo {
-    opacity: 0;
-    animation: fadeInImage 0.8s ease-in-out 0.3s forwards;
-}
-
-@keyframes fadeInImage {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Image Error Fallback */
-.staff-photo[style*="display: none"] + .image-placeholder,
-.owner-photo[style*="display: none"] + .image-placeholder {
-    display: flex !important;
-}
-
-/* Enhanced Staff Cards */
 .staff-card {
-    background: rgba(26, 26, 26, 0.5);
-    border-radius: 15px;
-    padding: 2rem;
+    background: rgba(26, 26, 26, 0.6);
+    border-radius: 18px;
+    padding: 2.5rem;
     text-align: center;
-    border: 1px solid rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.25);
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+}
+
+/* スタッフカード用の微妙なパターン */
+.staff-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(76, 175, 80, 0.02) 10px,
+            rgba(76, 175, 80, 0.02) 20px
+        );
+    pointer-events: none;
 }
 
 .staff-card::before {
@@ -165,6 +157,7 @@
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.1), transparent);
     transition: all 0.5s ease;
+    z-index: 1;
 }
 
 .staff-card:hover::before {
@@ -172,13 +165,112 @@
 }
 
 .staff-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(76, 175, 80, 0.5);
-    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.1);
+    transform: translateY(-6px);
+    border-color: rgba(76, 175, 80, 0.4);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.12);
 }
 
-/* Profile Badge Effect */
-.staff-name::after {
+/* 共通の画像スタイル - 統一感 */
+.staff-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/* オーナー画像 - より豪華に */
+.owner-image {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+}
+
+.owner-image .staff-photo {
+    border: 4px solid rgba(76, 175, 80, 0.4);
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.3);
+}
+
+.owner-image:hover .staff-photo {
+    border-color: #4caf50;
+    box-shadow: 0 0 40px rgba(76, 175, 80, 0.5);
+    transform: scale(1.08) rotate(2deg);
+}
+
+/* スタッフ画像 - 親しみやすく */
+.staff-image {
+    margin-bottom: 2rem;
+    width: 140px;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.staff-image .staff-photo {
+    border: 3px solid rgba(76, 175, 80, 0.3);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.2);
+}
+
+.staff-image:hover .staff-photo {
+    border-color: #4caf50;
+    box-shadow: 0 0 25px rgba(76, 175, 80, 0.4);
+    transform: scale(1.05);
+}
+
+/* 名前とタイトルのスタイル統一 */
+.owner-name,
+.staff-name {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+.owner-title,
+.staff-position {
+    color: #4caf50;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+}
+
+/* オーナータイトルをより目立たせる */
+.owner-title {
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.1rem;
+}
+
+/* 説明文のスタイル統一 */
+.owner-description p,
+.staff-description {
+    color: #cccccc;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 2;
+}
+
+.owner-description p {
+    margin-bottom: 1.5rem;
+}
+
+/* 名前の下線エフェクト */
+.staff-name::after,
+.owner-name::after {
     content: '';
     display: block;
     width: 0;
@@ -188,8 +280,56 @@
     transition: width 0.3s ease;
 }
 
-.staff-card:hover .staff-name::after {
+.staff-card:hover .staff-name::after,
+.owner-card:hover .owner-name::after {
     width: 50px;
+}
+
+/* オーナーの下線はより長く */
+.owner-card:hover .owner-name::after {
+    width: 70px;
+}
+
+/* プレースホルダー用の統一スタイル */
+.image-placeholder {
+    background: rgba(26, 26, 26, 0.7);
+    border: 2px dashed rgba(76, 175, 80, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.owner-image .image-placeholder {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 1.5rem;
+}
+
+.staff-image .image-placeholder {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 2rem 1rem;
+}
+
+.image-placeholder:hover {
+    border-color: rgba(76, 175, 80, 0.5);
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.image-placeholder i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #4caf50;
+}
+
+.image-placeholder p {
+    color: #888888;
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 .owner-name {
