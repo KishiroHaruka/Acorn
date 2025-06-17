@@ -377,3 +377,35 @@
         padding: 1.5rem;
     }
 }
+
+/* ヒーローセクションにロゴ背景 */
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+        url('../images/acorn-logo-bg.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ロゴ画像にパララックス効果 */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    background: url('../images/acorn-logo-bg.jpg') center/cover no-repeat;
+    opacity: 0.3;
+    animation: logoFloat 20s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.05) rotate(1deg); }
+}
