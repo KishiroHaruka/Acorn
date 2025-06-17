@@ -378,12 +378,16 @@
     }
 }
 
-/* ヒーローセクションにロゴ背景 */
+/* home.css に追加 - Acorn.png を背景に使用 */
+
 .hero {
     height: 100vh;
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-        url('../images/acorn-logo-bg.jpg') center/cover no-repeat,
+        /* オーバーレイ（画像を少し暗くする） */
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        /* メイン画像 */
+        url('../images/Acorn.png') center/cover no-repeat,
+        /* フォールバック背景 */
         linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
     position: relative;
     display: flex;
@@ -392,20 +396,54 @@
     overflow: hidden;
 }
 
-/* ロゴ画像にパララックス効果 */
-.hero::after {
+/* 画像にエフェクトを追加 */
+.hero::before {
     content: '';
     position: absolute;
-    top: -10%;
-    left: -10%;
-    right: -10%;
-    bottom: -10%;
-    background: url('../images/acorn-logo-bg.jpg') center/cover no-repeat;
-    opacity: 0.3;
-    animation: logoFloat 20s ease-in-out infinite;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        /* 微細なパーティクル効果 */
+        radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(76, 175, 80, 0.1) 0%, transparent 50%);
+    animation: backgroundShift 15s ease-in-out infinite;
+    z-index: 1;
 }
 
-@keyframes logoFloat {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.05) rotate(1deg); }
+/* 既存のロゴグローを調整（画像と重複しないように） */
+.logo-glow {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 
+        0 0 30px rgba(76, 175, 80, 0.9),
+        0 0 60px rgba(76, 175, 80, 0.7),
+        0 0 100px rgba(76, 175, 80, 0.5);
+    animation: glow 3s ease-in-out infinite alternate;
+    /* 背景画像の上に表示 */
+    position: relative;
+    z-index: 3;
+}
+
+/* ヒーローコンテンツを前面に */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .hero {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        background-attachment: scroll; /* モバイルでの表示改善 */
+    }
 }
