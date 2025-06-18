@@ -1,7 +1,8 @@
-/* Hero Section */
+/* Hero Section - 背景画像を明示的に削除 */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    background-image: none !important; /* 背景画像を強制削除 */
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%) !important;
     position: relative;
     display: flex;
     align-items: center;
@@ -16,11 +17,16 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background-image: none !important; /* こちらも明示的に削除 */
     background: 
-        radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 60%, rgba(76, 175, 80, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(76, 175, 80, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(76, 175, 80, 0.04) 0%, transparent 50%);
     animation: backgroundShift 20s ease-in-out infinite;
+}
+
+.hero::after {
+    background-image: none !important; /* 追加のレイヤーも削除 */
 }
 
 @keyframes backgroundShift {
@@ -52,30 +58,41 @@
     margin-bottom: 1rem;
 }
 
-.logo-glow {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 
-        0 0 20px rgba(76, 175, 80, 0.8),
-        0 0 40px rgba(76, 175, 80, 0.6),
-        0 0 80px rgba(76, 175, 80, 0.4);
-    animation: glow 3s ease-in-out infinite alternate;
+/* Logo Icon Styles */
+.logo-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(76, 175, 80, 0.8))
+            drop-shadow(0 0 40px rgba(76, 175, 80, 0.6))
+            drop-shadow(0 0 80px rgba(76, 175, 80, 0.4));
+    animation: iconGlow 3s ease-in-out infinite alternate;
+    transition: all 0.3s ease;
 }
 
-@keyframes glow {
+.logo-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 30px rgba(76, 175, 80, 1))
+            drop-shadow(0 0 60px rgba(76, 175, 80, 0.8))
+            drop-shadow(0 0 100px rgba(76, 175, 80, 0.6));
+}
+
+@keyframes iconGlow {
     from {
-        text-shadow: 
-            0 0 20px rgba(76, 175, 80, 0.8),
-            0 0 40px rgba(76, 175, 80, 0.6),
-            0 0 80px rgba(76, 175, 80, 0.4);
+        filter: drop-shadow(0 0 20px rgba(76, 175, 80, 0.8))
+                drop-shadow(0 0 40px rgba(76, 175, 80, 0.6))
+                drop-shadow(0 0 80px rgba(76, 175, 80, 0.4));
     }
     to {
-        text-shadow: 
-            0 0 30px rgba(76, 175, 80, 1),
-            0 0 60px rgba(76, 175, 80, 0.8),
-            0 0 100px rgba(76, 175, 80, 0.6);
+        filter: drop-shadow(0 0 30px rgba(76, 175, 80, 1))
+                drop-shadow(0 0 60px rgba(76, 175, 80, 0.8))
+                drop-shadow(0 0 100px rgba(76, 175, 80, 0.6));
     }
+}
+
+/* 既存の logo-glow スタイルを無効化（使用しない場合） */
+.logo-glow {
+    display: none;
 }
 
 .hero-title {
@@ -339,6 +356,11 @@
 
 /* Home Responsive */
 @media (max-width: 768px) {
+    .logo-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
     .hero-title .acorn-text {
         font-size: 2.5rem;
     }
@@ -364,10 +386,11 @@
 }
 
 @media (max-width: 480px) {
-    .hero-title .logo-glow {
-        font-size: 3rem;
+    .logo-icon {
+        width: 80px;
+        height: 80px;
     }
-
+    
     .hero-title .acorn-text {
         font-size: 2rem;
     }
@@ -375,68 +398,5 @@
     .concept-item,
     .quick-nav-item {
         padding: 1.5rem;
-    }
-}
-
-/* home.css に追加 - Acorn.png を背景に使用 */
-
-.hero {
-    height: 100vh;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* 画像にエフェクトを追加 */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(76, 175, 80, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 60%, rgba(76, 175, 80, 0.04) 0%, transparent 50%);
-    animation: backgroundShift 20s ease-in-out infinite;
-}
-
-/* 既存のロゴグローを調整（画像と重複しないように） */
-.logo-glow {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 
-        0 0 30px rgba(76, 175, 80, 0.9),
-        0 0 60px rgba(76, 175, 80, 0.7),
-        0 0 100px rgba(76, 175, 80, 0.5);
-    animation: glow 3s ease-in-out infinite alternate;
-    /* 背景画像の上に表示 */
-    position: relative;
-    z-index: 3;
-}
-
-/* ヒーローコンテンツを前面に */
-.hero-content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    .hero {
-        background-size: cover;
-        background-position: center center;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        background-attachment: scroll; /* モバイルでの表示改善 */
     }
 }
